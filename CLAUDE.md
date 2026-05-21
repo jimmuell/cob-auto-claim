@@ -4,10 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repository is
 
-This is the **planning and documentation repository** for COB Flow — a pre-revenue healthcare SaaS for coordination of benefits (COB) auto-claim processing. It is NOT the application code repo. The actual Next.js app lives at:
+This is the **planning and documentation repository** for COB Flow — a pre-revenue healthcare SaaS for coordination of benefits (COB) auto-claim processing. It is NOT the application code repo.
 
-- Local path: `~/Documents/Claude/Projects/cob-flow-app/`
-- GitHub: `https://github.com/jimmuell/cob-flow-app.git` (private)
+- This repo: local at `~/Documents/Claude/Projects/cob-auto-claim/`, GitHub `https://github.com/jimmuell/cob-auto-claim.git` (private).
+- App code: local at `~/Documents/Claude/Projects/cob-flow-app/`, GitHub `https://github.com/jimmuell/cob-flow-app.git` (private).
 
 When Jim asks you to build features, run tests, or work on the app, switch to `cob-flow-app/`. This directory is for authoring specs, handoffs, and prototype artifacts.
 
@@ -30,22 +30,23 @@ When starting work that touches product behavior or architecture, read these in 
 
 Conflict resolution: companion docs (#3–#6) win on product behavior; Conversion Handoff wins on engineering structure. When prototype and spec disagree, ask Jim — never guess.
 
-## Current phase status (as of 2026-05-20)
+## Current phase status (as of 2026-05-21)
 
-- **Phase A** (scaffolding): complete
-- **Phase B** (auth + app shell): complete — pushed to `origin/main` at `79cc377` (includes mobile polish)
-- **Phase C** (read-only workspaces: Dashboard, Claims & Triage list, Recovery Tracker): **next**. See `TOMORROW_PHASE_C_KICKOFF.md` for the exact kickoff prompt. Schema stays fixture-based through all of pass 1 — no Drizzle table definitions in Phase C.
-- **Phases D–H**: COB Analyzer + Claim Detail, Management, Admin, engine ports, QA.
+- **Phase A** (scaffolding): files written locally during pass 1 setup but never committed; recovered to `origin/main` in Phase B.1 (see `docs/COB_Flow_Handoff.md` § 11.x for the recovery commit log).
+- **Phase B** (auth + app shell): complete (CP1–CP4 + mobile polish).
+- **Phase B.1** (Phase A scaffolding recovery): complete — `origin/main` at `aace942`.
+- **Phase C** (read-only workspaces: Dashboard, Claims & Triage list, Recovery Tracker): planning in progress. Schema stays fixture-based through all of pass 1 — no Drizzle table definitions in Phase C. See the live Phase C kickoff in the active Cowork session (not in this repo).
+- **Phases D–H**: Claim Detail + COB Analyzer (D), Management (E), Admin (F), engine + utility ports with unit tests (G), QA + polish (H).
 
 ## Locked tech stack
 
 Next.js 15 · App Router · TypeScript strict · React 19 · Tailwind CSS · shadcn/ui · lucide-react · React Hook Form + Zod · TanStack Table · Supabase (auth + Postgres + storage, local instance for pass 1) · Drizzle ORM · Vercel · Vitest + Playwright · ESLint + Prettier · GitHub Actions CI.
 
-Pass-1 auth is mock (cookie-backed user-id session, demo-accounts picker). Real Supabase Auth wires in during Phase 2.
+Pass 1 auth is mock (cookie-backed user-id session, demo-accounts picker). Real Supabase Auth wires in during pass 2.
 
 ## Architectural guardrails (non-negotiable in all phases)
 
-- **`canPerform(user, action, context)`** — every state-changing action routes through `lib/authority/can-perform.ts`. Returns a discriminated union: `{ allowed }`, `{ requiresApproval, approverRole, queueType }`, or `{ denied, reason }`. Pass-1 stub returns `{ allowed: true }` if signed in, but the full shape must be there from day one.
+- **`canPerform(user, action, context)`** — every state-changing action routes through `lib/authority/can-perform.ts`. Returns a discriminated union: `{ allowed }`, `{ requiresApproval, approverRole, queueType }`, or `{ denied, reason }`. Pass 1 stub returns `{ allowed: true }` if signed in, but the full shape must be there from day one.
 - **Append-only audit log** — `auditLog.record(event)` with `{ actor, action, target, timestamp, justification?, metadata }`. `justification` column exists from day one (nullable). Never mutate existing rows.
 - **Single roles helper** — `lib/authority/roles.ts` exports `hasRole`, `isAnalyst`, `isSupervisor`, `isManager`, `isAdmin`, `effectiveRoles`. No scattered string comparisons.
 - **Tenant context through session**, not component props. Even in pass 1.
