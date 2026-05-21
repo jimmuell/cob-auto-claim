@@ -6,23 +6,31 @@ The Next.js application code lives in a separate repo: [cob-flow-app](https://gi
 
 ## What lives here
 
-**Strategy & business**
+### strategy/
+The why and what — product thesis, GTM playbook, and the research that informed both.
 - `COB_Auto_Claims_App_Strategy.docx` — original strategic plan and product thesis
 - `COB_Flow_GTM_Roadmap.docx` — go-to-market plan
-- `COB_Flow_Target_List_53045.xlsx` — prospect list (Wisconsin pilot)
-- `COB_Flow_Onboarding_Playbook_v0.1.docx` — customer onboarding instrument
-- `COB_Flow_SPD_Review_Template.docx` — front-door discovery template
-- `COB_Flow_Demand_Letter_Template.docx` — working template (moves into cob-flow-app `src/lib/letters/` when the engine ports in Phase G)
-- `COB_Flow_Auto_COB_Syllabus.docx` — training material
 - `COB_Research_Resources_and_Links.docx` — research index
+- `COB_Health_Insurance_Courses_Research.pdf` — research notes on COB training landscape and strategic opportunities
 
-**External reference material**
-- `Wisconsin Legislature_ Ins 3.40(11)(a).pdf` — Wisconsin's primary COB regulation
-- `handbooks/` — COB-TPL Handbook, COB Health Insurance Courses Research, COB Smart webinar
-- `archive/` — textbook scans (subrogation case law, IMG_1366–1371) and historical kickoff prompts
+### gtm/
+Customer-facing instruments used during sales, discovery, and onboarding.
+- `COB_Flow_Target_List_53045.xlsx` — prospect list (Wisconsin pilot area)
+- `COB_Flow_Onboarding_Playbook_v0.1.docx` — customer onboarding playbook
+- `COB_Flow_SPD_Review_Template.docx` — front-door discovery template
+- `COB_Flow_Demand_Letter_Template.docx` — operational template; moves into cob-flow-app `src/lib/letters/` when the engine ports in Phase G
 
-**Spec history**
-- `archive/specs/` — superseded Product Spec versions (v0.5, v0.6, v0.7). The current spec lives in cob-flow-app/docs/.
+### reference/
+External authoritative material — regulations, handbooks, case law, training.
+- `regulations/Wisconsin Legislature_ Ins 3.40(11)(a).pdf` — Wisconsin's primary COB regulation
+- `handbooks/` — COB-TPL Handbook (Medicare COB/TPL), COB Smart webinar (industry overview)
+- `case-law/` — subrogation case-law textbook scans (IMG_1366–1371)
+- `training/COB_Flow_Auto_COB_Syllabus.docx` — internal training material
+
+### archive/
+Frozen historical material; not actively consulted.
+- `kickoff/` — original Claude Code kickoff prompts (pre-build artifacts)
+- `specs/` — superseded Product Spec versions (v0.5, v0.6, v0.7)
 
 ## What lives in cob-flow-app/docs/ (NOT here)
 
@@ -46,4 +54,4 @@ See `CLAUDE.md` for agent guidance, working norms, and architectural guardrails.
 
 **Spec versions**: when a new Product Spec version supersedes the current one in cob-flow-app/docs/, the previous version moves to `archive/specs/` here. cob-flow-app/docs/ always holds exactly one current version per spec.
 
-**Templates**: working template documents (e.g., demand letter, SPD review) live here while they're being authored. When the engine ports in Phase G, the demand letter template moves into cob-flow-app as a typed data file under `src/lib/letters/`.
+**Templates**: working template documents (e.g., demand letter, SPD review) live in `gtm/` while they're being authored. When the engine ports in Phase G, the demand letter template moves into cob-flow-app as a typed data file under `src/lib/letters/`.
