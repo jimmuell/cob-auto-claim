@@ -25,7 +25,7 @@ External authoritative material — regulations, handbooks, case law, training.
 - `regulations/Wisconsin Legislature_ Ins 3.40(11)(a).pdf` — Wisconsin's primary COB regulation
 - `handbooks/` — COB-TPL Handbook (Medicare COB/TPL), COB Smart webinar (industry overview)
 - `case-law/` — subrogation case-law textbook scans (IMG_1366–1371)
-- `training/COB_Flow_Auto_COB_Syllabus.docx` — internal training material
+- `training/` — external reference training materials: ForwardHealth PDFs, catalog index. The Auto COB Syllabus (12-module curriculum spine) was relocated to cob-flow-app at `content/courses/auto-cob-wisconsin/COB_Flow_Auto_COB_Syllabus.docx` on 2026-05-21. Course content is build-driving and lives in the application repo alongside the future Content Manager (planned Phase I). External reference training materials (ForwardHealth PDFs, the catalog index) stay here.
 
 ### archive/
 Frozen historical material; not actively consulted.
