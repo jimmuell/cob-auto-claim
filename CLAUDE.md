@@ -4,6 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repository is
 
+> Working model: see `DIVISION_OF_LABOR.md` at the repo root for how Jim, Cowork (the planning layer in Claude.ai desktop), and the Claude Code agents (the per-repo execution layer) collaborate.
+
 This is the **planning and documentation repository** for COB Flow — a pre-revenue healthcare SaaS for coordination of benefits (COB) auto-claim processing. It is NOT the application code repo.
 
 - This repo: local at `~/Documents/Claude/Projects/cob-auto-claim/`, GitHub `https://github.com/jimmuell/cob-auto-claim.git` (private).
