@@ -13,7 +13,7 @@ When Jim asks you to build features, run tests, or work on the app, switch to `c
 
 ## Project context
 
-COB Flow automates healthcare coordination of benefits primacy determination, auto med-pay/PIP recovery, and post-payment subrogation. Wisconsin is the pilot state (tort/at-fault; made-whole doctrine applies). The regulatory anchor is **Wis. Admin. Code § Ins 3.40**; § Ins 3.40(18) is the explicit authority for the recovery workflow.
+COB Flow automates healthcare coordination of benefits primacy determination, auto med-pay/PIP recovery, and post-payment subrogation. Wisconsin is the pilot state (tort/at-fault; made-whole doctrine applies). The regulatory anchor is **Wis. Admin. Code § Ins 3.40**; § Ins 3.40(18) (coordination with noncomplying plans) is the explicit authority for the recovery workflow.
 
 The product is **decision-support in v1** — the engine recommends, the analyst signs. Four roles: Analyst, Supervisor, Manager, Admin. Analysts also carry a Job Level (Trainee / Junior / Mid / Senior) that drives authority defaults.
 
