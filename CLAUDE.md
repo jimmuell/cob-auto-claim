@@ -67,7 +67,7 @@ Pass 1 auth is mock (cookie-backed user-id session, demo-accounts picker). Real 
 ## Working norms
 
 - Propose design in 3–4 sections; Jim reviews each before code lands.
-- Commit spec to `docs/superpowers/specs/` and implementation plan to `docs/superpowers/plans/` before executing a phase.
+- Commit spec to `cob-flow-app/docs/superpowers/specs/` and implementation plan to `cob-flow-app/docs/superpowers/plans/` before executing a phase.
 - Push to `origin/main` at the end of every checkpoint. Include the remote HEAD hash in phase summaries.
 - Small focused commits — eight readable commits beat one giant one.
 - PR-style summaries at end of each phase: what landed, decisions made, what's open, what next phase inherits.
