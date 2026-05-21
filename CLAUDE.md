@@ -21,18 +21,18 @@ The product is **decision-support in v1** — the engine recommends, the analyst
 
 When starting work that touches product behavior or architecture, read these in order:
 
-1. `COB_Flow_NextJS_Conversion_Handoff.md` — the conversion brief. Locked tech stack (§5), architectural principles (§6), ingest architecture (§11), build phases (§15).
-2. `COB_Flow_Handoff.md` — full project context, guardrails (§9), and likely next workstreams (§10).
-3. `COB_Flow_Product_Spec_v0.8.docx` — canonical product spec. Minimum read: §§3, 6, 8, 9, 10, 11, 14, Appendix A.
-4. `COB_Flow_Dashboard_Spec_v0.1.docx` — role/authority architecture, approval queue types, audit architecture. Read §§3–8.
-5. `COB_Flow_WI_Workflow_v1.0.docx` — the 9-phase analyst workflow.
-6. `COB_Flow_MVP.html` — **authoritative reference** for layout, copy, component composition, and interaction. Open in a browser; sign in via the demo-account picker.
+1. `cob-flow-app/docs/COB_Flow_NextJS_Conversion_Handoff.md` — the conversion brief. Locked tech stack (§5), architectural principles (§6), ingest architecture (§11), build phases (§15).
+2. `cob-flow-app/docs/COB_Flow_Handoff.md` — full project context, guardrails (§9), and likely next workstreams (§10).
+3. `cob-flow-app/docs/COB_Flow_Product_Spec_v0.8.docx` — canonical product spec. Minimum read: §§3, 6, 8, 9, 10, 11, 14, Appendix A.
+4. `cob-flow-app/docs/COB_Flow_Dashboard_Spec_v0.1.docx` — role/authority architecture, approval queue types, audit architecture. Read §§3–8.
+5. `cob-flow-app/docs/COB_Flow_WI_Workflow_v1.0.docx` — the 9-phase analyst workflow.
+6. `cob-flow-app/docs/COB_Flow_MVP.html` — **authoritative reference** for layout, copy, component composition, and interaction. Open in a browser; sign in via the demo-account picker.
 
 Conflict resolution: companion docs (#3–#6) win on product behavior; Conversion Handoff wins on engineering structure. When prototype and spec disagree, ask Jim — never guess.
 
 ## Current phase status (as of 2026-05-21)
 
-- **Phase A** (scaffolding): files written locally during pass 1 setup but never committed; recovered to `origin/main` in Phase B.1 (see `docs/COB_Flow_Handoff.md` § 11.x for the recovery commit log).
+- **Phase A** (scaffolding): files written locally during pass 1 setup but never committed; recovered to `origin/main` in Phase B.1 (see `cob-flow-app/docs/COB_Flow_Handoff.md` § 11 → "Phase B.1 — Scaffolding recovery" for the recovery commit log).
 - **Phase B** (auth + app shell): complete (CP1–CP4 + mobile polish).
 - **Phase B.1** (Phase A scaffolding recovery): complete — `origin/main` at `aace942`.
 - **Phase C** (read-only workspaces: Dashboard, Claims & Triage list, Recovery Tracker): planning in progress. Schema stays fixture-based through all of pass 1 — no Drizzle table definitions in Phase C. See the live Phase C kickoff in the active Cowork session (not in this repo).
@@ -71,6 +71,6 @@ Pass 1 auth is mock (cookie-backed user-id session, demo-accounts picker). Real 
 - Push to `origin/main` at the end of every checkpoint. Include the remote HEAD hash in phase summaries.
 - Small focused commits — eight readable commits beat one giant one.
 - PR-style summaries at end of each phase: what landed, decisions made, what's open, what next phase inherits.
-- Propose updates to `docs/COB_Flow_Handoff.md` when meaningful decisions land — the next session inherits what's in it.
+- Propose updates to `cob-flow-app/docs/COB_Flow_Handoff.md` when meaningful decisions land — the next session inherits what's in it.
 - Reply prompts go in fenced code blocks (exposes a copy button in the chat UI).
 - Use domain language: COB primacy, made-whole doctrine, recovery cycle, lien reduction, payer hierarchy, ERISA preemption, MSP working aged. Jim thinks in these terms and expects responses framed in them.
